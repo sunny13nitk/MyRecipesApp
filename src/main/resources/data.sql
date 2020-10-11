@@ -1,0 +1,13 @@
+INSERT INTO category (description) VALUES ('American');
+INSERT INTO category (description) VALUES ('Italian');
+INSERT INTO category (description) VALUES ('Mexican');
+INSERT INTO category (description) VALUES ('Fast Food');
+INSERT INTO UOM (description) VALUES ('Teaspoon');
+INSERT INTO UOM (description) VALUES ('Tablespoon');
+INSERT INTO UOM (description) VALUES ('Cup');
+INSERT INTO UOM (description) VALUES ('Pinch');
+INSERT INTO UOM (description) VALUES ('Ounce');
+INSERT INTO ingredient (description) VALUES ('Flour');
+INSERT INTO ingredient (description) VALUES ('Sugar');
+INSERT INTO ingredient (description) VALUES ('Salt');
+INSERT INTO ingredient (description) VALUES ('Nutmeg');
