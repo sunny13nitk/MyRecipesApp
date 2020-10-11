@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ClassDiagram>
+    <Class name="sb.springboot.model.Ingredient" x="1035" y="134">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+    </Class>
+    <Class name="sb.springboot.model.RecipeConstituent" x="680" y="259">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+        <Association destinationClassName="sb.springboot.model.UOM"
+            endpointName="uom" kind="Simple"/>
+        <Association
+            destinationClassName="sb.springboot.model.Ingredient"
+            endpointName="ingredient" kind="Simple"/>
+        <Association destinationClassName="sb.springboot.model.Recipe"
+            endpointName="recipe" kind="Simple"/>
+    </Class>
+    <Class name="sb.springboot.model.Notes" x="271" y="561">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+    </Class>
+    <Class name="sb.springboot.model.UOM" x="969" y="554">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+    </Class>
+    <Class name="sb.springboot.model.Recipe" x="258" y="144">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+        <Association destinationClassName="sb.springboot.model.Notes"
+            endpointName="notes" kind="Simple"/>
+        <Association destinationClassName="sb.springboot.model.Category"
+            endpointName="categories" kind="Simple"/>
+        <Association
+            destinationClassName="sb.springboot.model.RecipeConstituent"
+            endpointName="constituents" kind="Simple"/>
+    </Class>
+    <Class name="sb.springboot.model.Category" x="567" y="564">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+        <Association destinationClassName="sb.springboot.model.Recipe"
+            endpointName="recipes" kind="Simple"/>
+    </Class>
+</ClassDiagram>
