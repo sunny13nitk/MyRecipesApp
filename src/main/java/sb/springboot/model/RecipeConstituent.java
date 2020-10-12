@@ -1,5 +1,7 @@
 package sb.springboot.model;
 
+import java.util.Optional;
+
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -95,6 +97,35 @@ public class RecipeConstituent
 	)
 	{
 		this.recipe = recipe;
+	}
+	
+	public RecipeConstituent(
+	        Optional<Ingredient> ingredient, double amount, Optional<UOM> uom
+	)
+	{
+		super();
+		this.ingredient = ingredient.get();
+		this.amount     = amount;
+		this.uom        = uom.get();
+		
+	}
+	
+	public RecipeConstituent(
+	        Optional<Ingredient> ingredient, double amount, Optional<UOM> uom, Recipe recipe
+	)
+	{
+		super();
+		this.ingredient = ingredient.get();
+		this.amount     = amount;
+		this.uom        = uom.get();
+		this.recipe     = recipe;
+	}
+	
+	public RecipeConstituent(
+	)
+	{
+		super();
+		// TODO Auto-generated constructor stub
 	}
 	
 }

@@ -32,6 +32,8 @@ public class Recipe
 	private int    servings;
 	private String source;
 	private String url;
+	
+	@Lob
 	private String directions;
 	
 	// add enum for Difficulty
@@ -45,7 +47,7 @@ public class Recipe
 	 * One to One - Uni-directional Relation
 	 */
 	@OneToOne(cascade = CascadeType.ALL)
-	@JoinColumn(name = "recipeId")
+	@JoinColumn(name = "notesId")
 	@Lob
 	private Notes notes;
 	
