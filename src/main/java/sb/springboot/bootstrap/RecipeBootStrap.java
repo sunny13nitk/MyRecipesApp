@@ -93,14 +93,30 @@ public class RecipeBootStrap implements ApplicationListener<ContextRefreshedEven
 		                + "Read more: http://www.simplyrecipes.com/recipes/perfect_guacamole/#ixzz4jvoun5ws");
 		guacRecipe.setNotes(guacNotes);
 		
-		guacRecipe.getConstituents().add(new RecipeConstituent(ingredientRepository.findByDescription("Flour"), 250,
-		        UOMRepository.findByDescription("Ounce"), guacRecipe));
+		/*
+		 * guacRecipe.getConstituents().add(new RecipeConstituent(ingredientRepository.findByDescription("Flour"), 250,
+		 * UOMRepository.findByDescription("Ounce"), guacRecipe));
+		 */
 		
-		guacRecipe.getConstituents().add(new RecipeConstituent(ingredientRepository.findByDescription("Sugar"), 2,
-		        UOMRepository.findByDescription("Tablespoon"), guacRecipe));
+		// Using helper Method so that recipe Instance need not be passed
+		guacRecipe.addConstituent(new RecipeConstituent(ingredientRepository.findByDescription("Flour"), 250,
+		        UOMRepository.findByDescription("Ounce")));
 		
-		guacRecipe.getConstituents().add(new RecipeConstituent(ingredientRepository.findByDescription("Salt"), 1,
-		        UOMRepository.findByDescription("Teaspoon"), guacRecipe));
+		/*
+		 * guacRecipe.getConstituents().add(new RecipeConstituent(ingredientRepository.findByDescription("Sugar"), 2,
+		 * UOMRepository.findByDescription("Tablespoon"), guacRecipe));
+		 */
+		
+		guacRecipe.addConstituent(new RecipeConstituent(ingredientRepository.findByDescription("Sugar"), 2,
+		        UOMRepository.findByDescription("Tablespoon")));
+		
+		/*
+		 * guacRecipe.getConstituents().add(new RecipeConstituent(ingredientRepository.findByDescription("Salt"), 1,
+		 * UOMRepository.findByDescription("Teaspoon"), guacRecipe));
+		 */
+		
+		guacRecipe.addConstituent(new RecipeConstituent(ingredientRepository.findByDescription("Salt"), 1,
+		        UOMRepository.findByDescription("Teaspoon")));
 		
 		guacRecipe.getCategories().add(categoryRepository.findByDescription("American").get());
 		guacRecipe.getCategories().add(categoryRepository.findByDescription("Mexican").get());
@@ -137,15 +153,26 @@ public class RecipeBootStrap implements ApplicationListener<ContextRefreshedEven
 		
 		tacosRecipe.setNotes(tacoNotes);
 		
-		tacosRecipe.getConstituents().add(new RecipeConstituent(ingredientRepository.findByDescription("Flour"), 450,
-		        UOMRepository.findByDescription("Ounce"), tacosRecipe));
+		/*
+		 * tacosRecipe.getConstituents().add(new RecipeConstituent(ingredientRepository.findByDescription("Flour"), 450,
+		 * UOMRepository.findByDescription("Ounce"), tacosRecipe));
+		 */
 		
-		tacosRecipe.getConstituents().add(new RecipeConstituent(ingredientRepository.findByDescription("Sugar"), 1,
-		        UOMRepository.findByDescription("Tablespoon"), tacosRecipe));
+		tacosRecipe.addConstituent(new RecipeConstituent(ingredientRepository.findByDescription("Flour"), 450,
+		        UOMRepository.findByDescription("Ounce")));
 		
-		tacosRecipe.getConstituents().add(new RecipeConstituent(ingredientRepository.findByDescription("Nutmeg"), .5,
-		        UOMRepository.findByDescription("Teaspoon"), tacosRecipe));
+		tacosRecipe.addConstituent(new RecipeConstituent(ingredientRepository.findByDescription("Sugar"), 1,
+		        UOMRepository.findByDescription("Tablespoon")));
 		
+		tacosRecipe.addConstituent(new RecipeConstituent(ingredientRepository.findByDescription("Nutmeg"), .5,
+		        UOMRepository.findByDescription("Teaspoon")));
+		
+		/*
+		 * tacosRecipe.getConstituents().add(new RecipeConstituent(ingredientRepository.findByDescription("Sugar"), 1,
+		 * UOMRepository.findByDescription("Tablespoon"), tacosRecipe)); tacosRecipe.getConstituents().add(new
+		 * RecipeConstituent(ingredientRepository.findByDescription("Nutmeg"), .5,
+		 * UOMRepository.findByDescription("Teaspoon"), tacosRecipe));
+		 */
 		tacosRecipe.getCategories().add(categoryRepository.findByDescription("Italian").get());
 		tacosRecipe.getCategories().add(categoryRepository.findByDescription("Fast Food").get());
 		

@@ -236,4 +236,16 @@ public class Recipe
 		this.constituents = constituents;
 	}
 	
+	/*
+	 * Helper Method to Add a Constituent Directly
+	 */
+	public Recipe addConstituent(
+	        RecipeConstituent constituent
+	)
+	{
+		constituent.setRecipe(this);
+		this.constituents.add(constituent);
+		return this;
+	}
+	
 }
