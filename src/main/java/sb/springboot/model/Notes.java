@@ -7,7 +7,10 @@ import javax.persistence.Id;
 import javax.persistence.Lob;
 import javax.persistence.OneToOne;
 
+import lombok.Data;
+
 @Entity
+@Data
 public class Notes
 {
 	@Id
@@ -19,51 +22,5 @@ public class Notes
 	
 	@OneToOne(mappedBy = "notes")
 	private Recipe recipe;
-	
-	public Long getNotesId(
-	)
-	{
-		return notesId;
-	}
-	
-	public void setNotesId(
-	        Long id
-	)
-	{
-		this.notesId = id;
-	}
-	
-	public String getNotes(
-	)
-	{
-		return notes;
-	}
-	
-	public void setNotes(
-	        String notes
-	)
-	{
-		this.notes = notes;
-	}
-	
-	public Recipe getRecipe(
-	)
-	{
-		return recipe;
-	}
-	
-	public void setRecipe(
-	        Recipe recipe
-	)
-	{
-		this.recipe = recipe;
-	}
-	
-	public Notes(
-	)
-	{
-		super();
-		// TODO Auto-generated constructor stub
-	}
 	
 }

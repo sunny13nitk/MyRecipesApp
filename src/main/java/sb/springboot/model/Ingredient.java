@@ -5,7 +5,10 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
+import lombok.Data;
+
 @Entity
+@Data
 public class Ingredient
 {
 	@Id
@@ -13,39 +16,5 @@ public class Ingredient
 	private long ingId;
 	
 	private String description;
-	public long getIngId(
-	)
-	{
-		return ingId;
-	}
-	
-	public void setIngId(
-	        long ingId
-	)
-	{
-		this.ingId = ingId;
-	}
-	
-	public String getDescription(
-	)
-	{
-		return description;
-	}
-	
-	public void setDescription(
-	        String description
-	)
-	{
-		this.description = description;
-	}
-	
-	public Ingredient(
-	)
-	{
-		super();
-		// TODO Auto-generated constructor stub
-	}
-	
-	// UOM to DO
 	
 }

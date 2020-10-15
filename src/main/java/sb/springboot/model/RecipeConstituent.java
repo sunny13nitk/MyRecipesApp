@@ -11,7 +11,10 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 
+import lombok.Data;
+
 @Entity
+@Data
 public class RecipeConstituent
 {
 	@Id
@@ -34,71 +37,6 @@ public class RecipeConstituent
 	@JoinColumn(name = "recipeId")
 	private Recipe recipe;
 	
-	public UOM getUom(
-	)
-	{
-		return uom;
-	}
-	
-	public void setUom(
-	        UOM uom
-	)
-	{
-		this.uom = uom;
-	}
-	
-	public Long getRcid(
-	)
-	{
-		return rcid;
-	}
-	
-	public void setRcid(
-	        Long rcid
-	)
-	{
-		this.rcid = rcid;
-	}
-	
-	public Ingredient getIngredient(
-	)
-	{
-		return ingredient;
-	}
-	
-	public void setIngredient(
-	        Ingredient ingredient
-	)
-	{
-		this.ingredient = ingredient;
-	}
-	
-	public double getAmount(
-	)
-	{
-		return amount;
-	}
-	
-	public void setAmount(
-	        double amount
-	)
-	{
-		this.amount = amount;
-	}
-	
-	public Recipe getRecipe(
-	)
-	{
-		return recipe;
-	}
-	
-	public void setRecipe(
-	        Recipe recipe
-	)
-	{
-		this.recipe = recipe;
-	}
-	
 	public RecipeConstituent(
 	        Optional<Ingredient> ingredient, double amount, Optional<UOM> uom
 	)
@@ -119,13 +57,6 @@ public class RecipeConstituent
 		this.amount     = amount;
 		this.uom        = uom.get();
 		this.recipe     = recipe;
-	}
-	
-	public RecipeConstituent(
-	)
-	{
-		super();
-		// TODO Auto-generated constructor stub
 	}
 	
 }

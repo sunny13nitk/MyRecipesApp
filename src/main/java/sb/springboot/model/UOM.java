@@ -5,7 +5,10 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
+import lombok.Data;
+
 @Entity
+@Data
 public class UOM
 {
 	@Id
@@ -13,38 +16,5 @@ public class UOM
 	private Long uomId;
 	
 	private String description;
-	
-	public Long getUomId(
-	)
-	{
-		return uomId;
-	}
-	
-	public void setUomId(
-	        Long uomId
-	)
-	{
-		this.uomId = uomId;
-	}
-	
-	public String getDescription(
-	)
-	{
-		return description;
-	}
-	
-	public void setDescription(
-	        String description
-	)
-	{
-		this.description = description;
-	}
-	
-	public UOM(
-	)
-	{
-		super();
-		// TODO Auto-generated constructor stub
-	}
 	
 }

@@ -5,9 +5,11 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
+import lombok.extern.slf4j.Slf4j;
 import sb.springboot.repository.RecipeRepository;
 
 @Controller
+@Slf4j
 public class IndexController
 {
 	private final String indexView = "index";
@@ -30,6 +32,7 @@ public class IndexController
 	        Model model
 	)
 	{
+		log.debug("Loading Index Page");
 		model.addAttribute("recipes", recipeRepo.findAll());
 		return indexView;
 	}

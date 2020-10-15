@@ -3,10 +3,12 @@ package sb.springboot.repository;
 import java.util.List;
 
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
 
 import sb.springboot.enums.Difficulty;
 import sb.springboot.model.Recipe;
 
+@Repository
 public interface RecipeRepository extends JpaRepository<Recipe, Long>
 {
 	public List<Recipe> findAllByDescriptionContaining(

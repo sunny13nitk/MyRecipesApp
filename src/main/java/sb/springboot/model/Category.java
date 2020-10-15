@@ -11,6 +11,9 @@ import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 
+import lombok.Data;
+
+@Data
 @Entity
 public class Category
 {
@@ -25,45 +28,6 @@ public class Category
 	        name = "Recipe_Category", joinColumns = @JoinColumn(name = "catId"), inverseJoinColumns = @JoinColumn(name = "recipeId")
 	)
 	private List<Recipe> recipes;
-	
-	public Long getCatId(
-	)
-	{
-		return catId;
-	}
-	
-	public void setCatId(
-	        Long catId
-	)
-	{
-		this.catId = catId;
-	}
-	
-	public String getDescription(
-	)
-	{
-		return description;
-	}
-	
-	public void setDescription(
-	        String description
-	)
-	{
-		this.description = description;
-	}
-	
-	public List<Recipe> getRecipes(
-	)
-	{
-		return recipes;
-	}
-	
-	public void setRecipes(
-	        List<Recipe> recipes
-	)
-	{
-		this.recipes = recipes;
-	}
 	
 	public Category(
 	)

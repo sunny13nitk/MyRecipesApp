@@ -8,6 +8,7 @@ import org.springframework.context.ApplicationListener;
 import org.springframework.context.event.ContextRefreshedEvent;
 import org.springframework.stereotype.Component;
 
+import lombok.extern.slf4j.Slf4j;
 import sb.springboot.enums.Difficulty;
 import sb.springboot.model.Notes;
 import sb.springboot.model.Recipe;
@@ -22,6 +23,7 @@ import sb.springboot.repository.UOMRepository;
  * Other Value Help Data loaded via /resources/data.sql
  */
 @Component
+@Slf4j
 public class RecipeBootStrap implements ApplicationListener<ContextRefreshedEvent>
 {
 	
@@ -55,6 +57,7 @@ public class RecipeBootStrap implements ApplicationListener<ContextRefreshedEven
 	)
 	{
 		recipeRepository.saveAll(loadRecipes()); // Add to Recipe Repository Bean
+		log.debug("Recipes Bootstrapped");
 	}
 	
 	// Create REcipes Here
