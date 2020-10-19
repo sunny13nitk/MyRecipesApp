@@ -26,7 +26,7 @@ public class IndexController
 	}
 	
 	@GetMapping(
-	    { "/", "" }
+	    { "/", "", "/recipes" }
 	)
 	public String showIndexPage(
 	        Model model

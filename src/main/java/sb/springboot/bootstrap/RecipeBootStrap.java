@@ -70,9 +70,11 @@ public class RecipeBootStrap implements ApplicationListener<ContextRefreshedEven
 		Recipe guacRecipe = new Recipe();
 		guacRecipe.setDescription("Perfect Guacamole");
 		guacRecipe.setPrepTime(10);
-		guacRecipe.setCookTime(0);
+		guacRecipe.setCookTime(3);
 		guacRecipe.setDifficulty(Difficulty.EASY);
-		
+		guacRecipe.setUrl("https://www.simplyrecipes.com/recipes/perfect_guacamole/#ixzz4jvpiV9Sd");
+		guacRecipe.setServings(4);
+		guacRecipe.setSource("Simply Recipes");
 		guacRecipe.setDirections(
 		        "1 Cut avocado, remove flesh: Cut the avocados in half. Remove seed. Score the inside of the avocado with a blunt knife and scoop out the flesh with a spoon"
 		                + "\n"
@@ -179,6 +181,9 @@ public class RecipeBootStrap implements ApplicationListener<ContextRefreshedEven
 		tacosRecipe.getCategories().add(categoryRepository.findByDescription("Italian").get());
 		tacosRecipe.getCategories().add(categoryRepository.findByDescription("Fast Food").get());
 		
+		tacosRecipe.setUrl("http://www.simplyrecipes.com/recipes/spicy_grilled_chicken_tacos/#ixzz4jvtrAnNm");
+		tacosRecipe.setServings(2);
+		tacosRecipe.setSource("Simply Recipes");
 		// add to return list
 		recipes.add(tacosRecipe);
 		

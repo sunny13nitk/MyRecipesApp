@@ -26,6 +26,15 @@
 <body>
 		<div class="container-fluid" style="margin-top: 20px">
 				<div class="row">
+						<div class="col-md-3 col-md-offset-9" style="margin-bottom: 20px">
+								<a class="btn btn-primary" href="#" th:href="@{'/recipes/new'}"
+										role="button">New Recipe</a>
+
+						</div>
+
+
+				</div>
+				<div class="row">
 						<div class="col-md-8 col-md-offset-2">
 								<div class="panel panel-primary">
 
@@ -40,22 +49,37 @@
 																		<tr>
 																				<th>ID</th>
 																				<th>Description</th>
+																				<th>View</th>
+																				<th>Update</th>
+																				<th>Delete</th>
 																		</tr>
 																</thead>
 																<tr th:remove="all">
-																		<td th:text="${recipe.recipeId}">123</td>
-																		<td th:text="${recipe.description}">Tasty
-																				Goodnees 1</td>
+																		<td>123</td>
+																		<td>Tasty Goodnees 1</td>
+																		<td><a href="#">View</a></td>
+																		<td><a href="#">Update</a></td>
+																		<td><a href="#">Update</a></td>
 																</tr>
 																<tr th:remove="all">
-																		<td th:text="${recipe.recipeId}">12333</td>
-																		<td th:text="${recipe.description}">Tasty
-																				Goodnees 2</td>
+																		<td>12333</td>
+																		<td>Tasty Goodnees 2</td>
+																		<td><a href="#">View</a></td>
+																		<td><a href="#">Update</a></td>
+																		<td><a href="#">Update</a></td>
 																</tr>
 																<tr th:each="recipe : ${recipes}">
+
 																		<td th:text="${recipe.recipeId}">334</td>
 																		<td th:text="${recipe.description}">Tasty
 																				Goodnees 3</td>
+																		<td><a href="#"
+																				th:href="@{'/recipes/' + ${recipe.recipeId}}">View</a></td>
+																		<td><a href="#"
+																				th:href="@{'/recipes/' + ${recipe.recipeId}+'/update'}">Update</a></td>
+
+																		<td><a href="#"
+																				th:href="@{'/recipes/' + ${recipe.recipeId}+'/delete'}">Delete</a></td>
 																</tr>
 														</table>
 												</div>
