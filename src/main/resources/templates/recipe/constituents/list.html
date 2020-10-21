@@ -29,7 +29,14 @@
             <div class="panel panel-primary">
 
                <div class="panel-heading">
-                  <h1 class="panel-title">Ingredients</h1>
+                  <h1 class="panel-title">
+                     Ingredients <span style="padding-left: 350px">
+                        <a class="btn btn-info" href="#"
+                        th:href="@{'/recipeConstituents/' + ${recipeId} + '/constituents/new'}"
+                        role="button">New</a>
+                     </span>
+                  </h1>
+
                </div>
                <div class="panel-body">
 
@@ -67,9 +74,9 @@
                            <td><a href="#"
                               th:href="@{'/ingredients/' + ${ingredient.ingredient.ingId}}">View</a></td>
                            <td><a href="#"
-                              th:href="@{'/recipeConstituents/' + ${recipeId} + ${ingredient.rcid} + '/update'}">Update</a></td>
+                              th:href="@{'/recipeConstituents/' + ${ingredient.rcid} + '/update'}">Update</a></td>
                            <td><a href="#"
-                              th:href="@{'/recipeConstituents/' + ${recipeId} + ${ingredient.rcid} + '/delete'}">Delete</a></td>
+                              th:href="@{'/recipeConstituents/' + ${ingredient.rcid} + '/delete'}">Delete</a></td>
                         </tr>
                      </table>
                   </div>

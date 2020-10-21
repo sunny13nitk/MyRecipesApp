@@ -14,7 +14,7 @@ import sb.springboot.repository.IngredientRepository;
 
 @Controller
 @RequestMapping("/ingredients")
-public class ImgredientController
+public class IngredientController
 {
 	@Autowired
 	private IngredientRepository ingRepo;
@@ -31,6 +31,7 @@ public class ImgredientController
 			{
 				
 				model.addAttribute("ingredient", ing.get());
+				
 			}
 		}
 		return "ingredients/show";
