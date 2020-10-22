@@ -72,90 +72,100 @@
                            </div>
                            <div class="col-md-3 form-group">
                               <label>Difficulty:</label> <select
-                                 class="form-control">
+                                 class="form-control"
+                                 th:field="*{difficulty}">
+                                 <option
+                                    th:each="difficultyValue : ${T(sb.springboot.enums.Difficulty).values()}"
+                                    th:value="${difficultyValue.name()}"
+                                    th:text="${difficultyValue.name()}">val
+                                 </option>
+                              </select> <select class="form-control"
+                                 th:remove="all">
                                  <option>Easy</option>
                                  <option>Medium</option>
                                  <option>Hard</option>
                               </select>
                            </div>
-                        </div>
-                        <div class="row">
-                           <div class="col-md-3 form-group">
-                              <label>Servings:</label> <input
-                                 type="text" class="form-control"
-                                 th:field="*{servings}" />
-                           </div>
-                           <div class="col-md-3 form-group">
-                              <label>Source:</label> <input type="text"
-                                 class="form-control"
-                                 th:field="*{source}" />
-                           </div>
-                           <div class="col-md-3 form-group">
-                              <label>URL:</label> <input type="text"
-                                 class="form-control" th:field="*{url}" />
-                           </div>
-                        </div>
-                     </div>
-                  </div>
-                  <div class="panel panel-primary">
-                     <div class="panel-heading">
-                        <div class="row">
-                           <div class="col-md-11 ">
-                              <h1 class="panel-title">Ingredients</h1>
-                           </div>
-                           <div class="col-md-1">
-                              <a class="btn btn-primary" href="#"
-                                 th:href="@{'/recipes/' + ${recipe.recipeId} + '/ingredients'}"
-                                 role="button">Edit</a>
+                           <div class="row">
+                              <div class="col-md-3 form-group">
+                                 <label>Servings:</label> <input
+                                    type="text" class="form-control"
+                                    th:field="*{servings}" />
+                              </div>
+                              <div class="col-md-3 form-group">
+                                 <label>Source:</label> <input
+                                    type="text" class="form-control"
+                                    th:field="*{source}" />
+                              </div>
+                              <div class="col-md-3 form-group">
+                                 <label>URL:</label> <input type="text"
+                                    class="form-control"
+                                    th:field="*{url}" />
+                              </div>
                            </div>
                         </div>
                      </div>
-                     <div class="panel-body">
-                        <div class="row">
-                           <div class="col-md-12">
-                              <ul>
-                                 <li th:remove="all">1 Cup of milk</li>
-                                 <li th:remove="all">1 Teaspoon of
-                                    chocolate</li>
-                                 <li
-                                    th:each="ingredient : ${recipe.constituents}"
-                                    th:text="${(ingredient.getAmount() +
+                     <div class="panel panel-primary">
+                        <div class="panel-heading">
+                           <div class="row">
+                              <div class="col-md-11 ">
+                                 <h1 class="panel-title">Ingredients</h1>
+                              </div>
+                              <div class="col-md-1">
+                                 <a class="btn btn-primary" href="#"
+                                    th:href="@{'/recipes/' + ${recipe.recipeId} + '/ingredients'}"
+                                    role="button">Edit</a>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="panel-body">
+                           <div class="row">
+                              <div class="col-md-12">
+                                 <ul>
+                                    <li th:remove="all">1 Cup of
+                                       milk</li>
+                                    <li th:remove="all">1 Teaspoon
+                                       of chocolate</li>
+                                    <li
+                                       th:each="ingredient : ${recipe.constituents}"
+                                       th:text="${(ingredient.getAmount() +
                                         ' ' + ingredient.uom.getDescription() +
                                         ' - ' + ingredient.ingredient.getDescription())}">1
-                                    Teaspoon of Sugar</li>
-                              </ul>
+                                       Teaspoon of Sugar</li>
+                                 </ul>
+                              </div>
                            </div>
                         </div>
                      </div>
-                  </div>
-                  <div class="panel panel-primary">
-                     <div class="panel-heading">
-                        <h1 class="panel-title">Directions</h1>
-                     </div>
-                     <div class="panel-body">
-                        <div class="row">
-                           <div class="col-md-12 form-group">
-                              <textarea class="form-control" rows="3"
-                                 th:field="*{directions}"></textarea>
+                     <div class="panel panel-primary">
+                        <div class="panel-heading">
+                           <h1 class="panel-title">Directions</h1>
+                        </div>
+                        <div class="panel-body">
+                           <div class="row">
+                              <div class="col-md-12 form-group">
+                                 <textarea class="form-control" rows="3"
+                                    th:field="*{directions}"></textarea>
+                              </div>
                            </div>
                         </div>
                      </div>
-                  </div>
-                  <div class="panel panel-primary">
-                     <div class="panel-heading">
-                        <h1 class="panel-title">Notes</h1>
-                     </div>
-                     <div class="panel-body">
-                        <div class="row">
-                           <div class="col-md-12 form-group">
-                              <textarea class="form-control" rows="3"
-                                 th:field="*{notes.notes}"></textarea>
+                     <div class="panel panel-primary">
+                        <div class="panel-heading">
+                           <h1 class="panel-title">Notes</h1>
+                        </div>
+                        <div class="panel-body">
+                           <div class="row">
+                              <div class="col-md-12 form-group">
+                                 <textarea class="form-control" rows="3"
+                                    th:field="*{notes.notes}"></textarea>
+                              </div>
                            </div>
                         </div>
                      </div>
+                     <button type="submit" class="btn btn-success"
+                        style="margin-bottom: 10px">Submit</button>
                   </div>
-                  <button type="submit" class="btn btn-success"
-                     style="margin-bottom: 10px">Submit</button>
                </div>
             </form>
          </div>

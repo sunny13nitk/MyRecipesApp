@@ -1,5 +1,7 @@
 package sb.springboot.services.interfaces;
 
+import org.springframework.web.multipart.MultipartFile;
+
 import sb.springboot.model.Recipe;
 import sb.springboot.model.RecipeConstituent;
 
@@ -12,5 +14,9 @@ public interface RecipeService
 	 */
 	public Recipe updateRecipeConstituent(
 	        Long recipeId, RecipeConstituent recipeConstituent
+	);
+	
+	public void saveImageFile(
+	        Long recipeId, MultipartFile file
 	);
 }
